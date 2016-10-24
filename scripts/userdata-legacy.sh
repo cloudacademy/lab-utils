@@ -16,11 +16,11 @@ cd lab-utils/
 #Get the Instance ID from metadata
 INSTANCEID=$(curl http://169.254.169.254/2016-06-30/meta-data/instance-id)
 #Get public DNS from metadata
-HOSTURL=$(curl http://169.254.169.254/2016-06-30/meta-data/public-hostname)
+PUBLICIP=$(curl http://169.254.169.254/2016-06-30/meta-data/public-ipv4)
 #Replace the Instance ID in the Html file
 sed -i "s/instanceID/$INSTANCEID/g" html/legacy.html
 #Replace the public DNS in the Html file
-sed -i "s/publicHostname/$HOSTURL/g" html/legacy.html
+sed -i "s/publicIP/$PUBLICIP/g" html/legacy.html
 #Copy the html file to the public html folder at the root level
 cp -f html/legacy.html /var/www/html/index.html
 #Restart apache
