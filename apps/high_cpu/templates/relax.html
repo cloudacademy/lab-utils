@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+  {% if burn %}
+    <h1>{{message}}</h1>
+    <br>
+    <i class="em em-sweat_smile" style="font-size:400%"></i>
+  {% else %}
+    <h1>{{message}}</h1>
+  {% endif %}
+{% endblock %}

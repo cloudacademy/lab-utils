@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+  {% if burn %}
+    <h1>{{message}}</h1>
+    <span class="blink_text">
+
+      <i class="em em-fire"></i><i class="em em-fire"></i><i class="em em-fire"></i>
+
+    </span>
+    <h4>Go to <a href="/relax"><code>/relax</code></a> to revert this process.</h4>
+  {% else %}
+    <h1>{{message}}</h1>
+  {% endif %}
+{% endblock %}
