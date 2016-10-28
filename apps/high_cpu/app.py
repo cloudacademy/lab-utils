@@ -25,7 +25,7 @@ def relax():
     try:
         os.system("killall yes")
         burn = True
-        message = 'This are better now...'
+        message = 'Things are better now...'
     except:
         burn = False
         message = 'Something went wrong'
