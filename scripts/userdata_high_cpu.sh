@@ -2,7 +2,7 @@
 
 #Update system packages
 yum update -y
-#Install Git
+#Install Git, Apache and mod_wsgi
 yum install -y git
 #Clone a repository
 git clone https://github.com/cloudacademy/lab-utils.git
@@ -11,4 +11,4 @@ cd lab-utils/apps/high_cpu
 # Install requirements from requirements.txt
 pip install -r requirements.txt
 # Launch application
-python app.py
+python cyclone.py
