@@ -30,6 +30,3 @@ def relax():
         burn = False
         message = 'Something went wrong'
     return render_template('relax.html', burn=burn, message=message)
-
-if __name__ == "__main__":
-    app.run(host='0.0.0.0', debug=True)
