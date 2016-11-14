@@ -2,7 +2,6 @@ import os
 import random
 import json
 from flask import Flask, render_template
-from flask import request
 
 
 with open('dogs.json') as data_file:
