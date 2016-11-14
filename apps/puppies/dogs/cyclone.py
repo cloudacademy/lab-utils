@@ -1,6 +1,6 @@
 from tornado.wsgi import WSGIContainer
 from tornado.ioloop import IOLoop
-from tornado.web import FallbackHandler, RequestHandler, Application
+from tornado.web import FallbackHandler, Application
 from app import app
 
 tr = WSGIContainer(app)
