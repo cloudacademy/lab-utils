@@ -11,7 +11,7 @@ with open('dogs.json') as data_file:
 app = Flask(__name__)
 
 
-@app.route('/')
+@app.route('/dogs')
 def index():
     quote = quotes[random.randrange(len(quotes))]
     return render_template('index.html', quote=quote['quote'])
