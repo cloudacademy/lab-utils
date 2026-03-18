@@ -267,15 +267,6 @@
     "facetable": false
   },
   {
-    "name": "metadata_storage_content_md5",
-    "type": "Edm.String",
-    "retrievable": false,
-    "searchable": false,
-    "filterable": false,
-    "sortable": false,
-    "facetable": false
-  },
-  {
     "name": "metadata_storage_file_extension",
     "type": "Edm.String",
     "retrievable": false,
