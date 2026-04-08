@@ -1,0 +1,116 @@
+[
+  {
+    "name": "book_id",
+    "type": "Edm.String",
+    "retrievable": true,
+    "searchable": false,
+    "filterable": true,
+    "sortable": true,
+    "facetable": false
+  },
+  {
+    "name": "book_title",
+    "type": "Edm.String",
+    "retrievable": true,
+    "searchable": true,
+    "filterable": false,
+    "sortable": true,
+    "facetable": false
+  },
+  {
+    "name": "author",
+    "type": "Edm.String",
+    "retrievable": true,
+    "searchable": true,
+    "filterable": true,
+    "sortable": true,
+    "facetable": true
+  },
+  {
+    "name": "genre",
+    "type": "Edm.String",
+    "retrievable": true,
+    "searchable": true,
+    "filterable": true,
+    "sortable": true,
+    "facetable": true
+  },
+  {
+    "name": "year",
+    "type": "Edm.Int64",
+    "retrievable": true,
+    "filterable": true,
+    "sortable": true,
+    "facetable": true
+  },
+  {
+    "name": "summary",
+    "type": "Edm.String",
+    "retrievable": true,
+    "searchable": true,
+    "filterable": false,
+    "sortable": false,
+    "facetable": false
+  },
+  {
+    "name": "image_url",
+    "type": "Edm.String",
+    "retrievable": true,
+    "searchable": false,
+    "filterable": false,
+    "sortable": false,
+    "facetable": false
+  },
+  {
+    "name": "AzureSearch_DocumentKey",
+    "type": "Edm.String",
+    "retrievable": true,
+    "searchable": false,
+    "filterable": false,
+    "sortable": false,
+    "facetable": false
+  },
+  {
+    "name": "metadata_storage_content_type",
+    "type": "Edm.String",
+    "retrievable": false,
+    "searchable": false,
+    "filterable": true,
+    "sortable": false,
+    "facetable": true
+  },
+  {
+    "name": "metadata_storage_size",
+    "type": "Edm.Int64",
+    "retrievable": false,
+    "filterable": true,
+    "sortable": true,
+    "facetable": true
+  },
+  {
+    "name": "metadata_storage_last_modified",
+    "type": "Edm.DateTimeOffset",
+    "retrievable": false,
+    "filterable": true,
+    "sortable": true,
+    "facetable": true
+  },
+  {
+    "name": "metadata_storage_content_md5",
+    "type": "Edm.String",
+    "retrievable": false,
+    "searchable": false,
+    "filterable": false,
+    "sortable": false,
+    "facetable": false
+  },
+  {
+    "name": "metadata_storage_file_extension",
+    "type": "Edm.String",
+    "retrievable": false,
+    "searchable": false,
+    "filterable": true,
+    "sortable": false,
+    "facetable": true
+  }
+]
