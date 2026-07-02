@@ -1,0 +1,16 @@
+{
+  "name": "dialogflow-inline-editor-fulfillment",
+  "description": "Dialogflow ES inline editor fulfillment for Cloud Functions gen 1",
+  "version": "1.0.0",
+  "private": true,
+  "license": "Apache-2.0",
+  "engines": {
+    "node": "22"
+  },
+  "scripts": {
+    "deploy": "firebase deploy --only functions:dialogflowFirebaseFulfillment"
+  },
+  "dependencies": {
+    "firebase-functions": "^6.0.0"
+  }
+}
