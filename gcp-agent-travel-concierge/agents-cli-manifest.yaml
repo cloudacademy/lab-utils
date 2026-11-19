@@ -1,0 +1,21 @@
+name: travel-concierge
+acli_version: 1.15.0
+agent_directory: travel_concierge
+region: us-central1
+base_template: adk_python
+generated_at: '2026-11-18T15:17:47.212560+00:00'
+language: python
+framework: google-adk
+create_params:
+  root_agent_name: root_agent
+  app_name: travel_concierge
+  deployment_target: agent_runtime
+  cicd_runner: skip
+  is_a2a: true
+  agent_gateway: false
+  agent_guidance_filename: GEMINI.md
+  agent_runtime:
+    identity_default: service_account
+  cloud_run:
+    identity_default: service_account
+  agent_directory: travel_concierge

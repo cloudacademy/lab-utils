@@ -1,0 +1,154 @@
+[project]
+name = "travel-concierge"
+version = "0.1.0"
+description = "Orchestrates personalized travel experiences, illustrates means to integrate booking systems, and provides support throughout the traveler's journey, from initial planning, booking, to real-time itinerary services and alerts."
+readme = "README.md"
+authors = [
+    { name = "Gary Ng", email = "gkcng@google.com" },
+    { name = "Arun Santhanagopalan", email = "asanthan@google.com" },
+    { name = "Renee Zhang", email = "xiaolizhang@google.com" },
+    { name = "Anisha Kaul", email = "anishasjkaul@google.com" },
+    { name = "Duncan Renfrow-Symon", email = "drenfrowsymon@google.com" },
+]
+license = { text = "Apache-2.0" }
+requires-python = ">=3.11,<3.13"
+dependencies = [
+    "google-cloud-aiplatform[adk,agent-engines]>=2.2,<3.0.0",
+    "pydantic>=2.13.4",
+    "python-dotenv>=1.0.1",
+    "google-genai>=2.30,<3.0.0",
+    "google-adk[bigquery-analytics,gcp,mcp,otel-gcp]>=2.12.0,<3.0.0",
+    "arize-otel>=0.8.2 ; python_full_version >= '3.11' and python_full_version < '3.13'",
+    "openinference-instrumentation-google-adk>=0.1.0 ; python_full_version >= '3.11' and python_full_version < '3.14'",
+    "openinference-instrumentation>=0.1.53",
+    "arize>=8.35.0",
+    "arize-phoenix-evals>=3.1.0",
+    "scikit-learn>=1.9.0",
+    "pandas>=2.3.0",
+    "a2a-sdk[http-server]>=1.0,<2",
+    "aiohttp>=3.13.4",
+    "fastapi<0.142.0",
+    "gcsfs>=2026.10.0",
+    "google-cloud-agentplatform[agent-engines]>=2.2.0,<3.0.0",
+    "google-cloud-logging>=3.12.0,<4.0.0",
+    "opentelemetry-resourcedetector-gcp<=1.12.0a0",
+    "protobuf>=6.31.1,<7.0.0",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.0",
+    "google-adk[eval]>=2.12.0,<3.0.0",
+    "pytest-asyncio>=1.4.0",
+]
+
+deployment = [
+    "absl-py>=2.2.1",
+    "cloudpickle>=3.1.1",
+    "flake8-pyproject>=1.2.3",
+]
+
+[project.optional-dependencies]
+lint = [
+    "ruff>=0.15.17",
+    "mypy>=2.1.0",
+    "codespell>=2.2.0",
+    "types-pyyaml>=6.0.12.20260518",
+    "types-requests>=2.33.0.20260518",
+]
+
+[tool.ruff]
+line-length = 80
+target-version = "py311"
+src = ["."]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "C", "PL", "B", "UP", "RUF", "S"]
+ignore = [
+    "E501",
+    "PLR0913",
+    "PLR2004",
+    "PLC0415",
+    "PLR0917",
+    "PLR0911",
+    "PLR0912",
+    "PLR0915",
+    "C901",
+    "PLW0603",
+]
+
+[tool.ruff.lint.per-file-ignores]
+"**/__init__.py" = ["F401"]
+"**/tests/**" = [
+    "S101",
+    "S104",
+    "S105",
+    "S106",
+    "S107",
+    "S108",
+    "S110",
+    "S113",
+    "S310",
+    "S311",
+    "S324",
+    "S603",
+    "S607",
+]
+"**/test_*.py" = [
+    "S101",
+    "S104",
+    "S105",
+    "S106",
+    "S107",
+    "S108",
+    "S110",
+    "S113",
+    "S310",
+    "S311",
+    "S324",
+    "S603",
+    "S607",
+]
+"**/*.ipynb" = ["S101", "S104", "S105", "S324", "S608"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["travel_concierge"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+
+[tool.mypy]
+disallow_untyped_calls = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+no_implicit_optional = true
+check_untyped_defs = true
+disallow_subclassing_any = true
+warn_incomplete_stub = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_unreachable = true
+follow_imports = "silent"
+ignore_missing_imports = true
+explicit_package_bases = true
+disable_error_code = ["misc", "no-untyped-call", "no-any-return"]
+exclude = [".venv"]
+
+[tool.codespell]
+ignore-words-list = "rouge"
+skip = "./locust_env/*,uv.lock,.venv,./frontend,**/*.ipynb"
+
+[tool.pytest.ini_options]
+pythonpath = "."
+asyncio_default_fixture_loop_scope = "function"
+
+[tool.agents-cli]
+example_question = "I want to plan a trip to Seattle"
+
+[tool.agents-cli.settings]
+agent_directory = "travel_concierge"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
